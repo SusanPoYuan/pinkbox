@@ -1,7 +1,13 @@
 class Admin::ProductsController < ApplicationController
+	layout "admin"
+
+	def index
+		@products = Product.all
+	end
 
 	def new
 		@product = Product.new
+		@image = @product.build_image
 	end
 
 	def create
@@ -15,6 +21,11 @@ class Admin::ProductsController < ApplicationController
 
 	def edit
 		@product = Product.find(params[:id])
+		if @product.image.present?
+			@image = @product.image
+		else
+			@pimage = @product.build_image
+		end
 	end
 	
 	def update
@@ -29,6 +40,6 @@ class Admin::ProductsController < ApplicationController
 	private
 	
 	def product_params
-		params.require(:product).permit(:title, :price, :description, :number)
+		params.require(:product).permit(:title, :price, :description, :number, image_attributes: [:image, :id])
 	end
 end

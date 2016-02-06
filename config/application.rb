@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Pinkbox
   class Application < Rails::Application
     config.active_job.queue_adapter = :delayed_job
+    config.autoload_paths += %w(#{config.root}/app/uploaders)
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
