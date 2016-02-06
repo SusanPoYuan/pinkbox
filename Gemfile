@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
+gem 'delayed_job_active_record'
+gem "devise"
+
 gem "bootstrap-sass"
 gem "simple_form"
-gem 'delayed_job_active_record'
 gem "font-awesome-rails"
 gem 'waypoints-rails'
 
