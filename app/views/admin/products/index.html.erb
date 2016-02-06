@@ -1,6 +1,9 @@
 <section id="index_product" class="content-1 text-center bg-shop-2">
 <h2> Product List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
+  <% if current_user.present? %>
+    <%= link_to("log out", destroy_user_session_path, method: :delete, class: "btn btn-white") %>
+  <% end %>
   <%= link_to("New Product", new_admin_product_path, class: "btn btn-white") %>
 </div>
 <table class="table table-bordered">
@@ -42,3 +45,5 @@
   </tbody>
 </table>
 </section>
+
+
