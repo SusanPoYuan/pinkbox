@@ -9,9 +9,11 @@ gem 'waypoints-rails'
 
 gem "carrierwave"
 gem "mini_magick"
+gem "fog"
 
 gem "letter_opener", group: :development
 gem "roadie"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
