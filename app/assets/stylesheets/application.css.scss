@@ -1438,6 +1438,36 @@ section {
     -o-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s;
 }
+.zoom-img-squre  {
+    
+    width:180px;
+    z-index:1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
+    -ms-transition: all 0.15s ease-out 0s;
+    -o-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+    -webkit-box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.4);
+  margin-bottom: 25px;
+  border: 6px solid #FF83DF;
+}
+.zoom-img-squre:hover {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
+    -ms-transition: all 0.15s ease-out 0s;
+    -o-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+}
 /*-----  End of Features  ------*/
 
 /*=====================================
@@ -1770,6 +1800,9 @@ a {
 }
 .zoom-img  {
 	border: 6px solid #FF83DF;
+}
+.zoom-img-squre  {
+  border: 6px solid #FF83DF;
 }
 /*-----  End of COLOR purple  ------*/
 

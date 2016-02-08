@@ -1,0 +1,27 @@
+<section id="features" class="features-1">
+	<div class="container padding-top-bottom">
+		<div class="row header">
+			<div class="col-md-12">
+				<h2>選擇適合你的方案</h2>
+				<p>Make your choice!</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<% @products.each do |product| %>
+	            <div class="col-md-4 col-sm-4 col-xs-12 anima scale-in ">
+	                <article class="text-center">
+              			<%= image_tag(product.image.image.url, class: "zoom-img-squre img-responsive center-block") %>
+	                    <h2>​<%= product.title %></h2>
+	                    <h2>​特價:<%= product.price %></h2>
+	                    <p><%= product.description %></p>
+	                    <%= link_to(content_tag(:b, "確定選購"), checkout_orders_path(:id => product.id), method: :post, class: "btn white") %>
+
+	                </article>
+	            </div>                       
+				<% end %>
+			</div>             
+      	</div>
+
+	</div>	
+</section>

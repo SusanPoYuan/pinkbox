@@ -1,0 +1,32 @@
+<section class="cta-1 bg-shop padding-top-bottom text-center">
+	<div ><br><br></div>
+	<h2>購買資訊</h2>
+<div class= "container-fluid text-center bg-shop-2">
+		<div ><br><br></div>
+	<%= simple_form_for @order do |f| %>
+
+		<%= f.simple_fields_for :info do |p|%>
+		  <legend> 訂購人</legend>
+          	<div class="form-group">	
+          		<%= p.input :billing_name  %>
+          	</div>
+
+          <legend> 訂購人地址</legend>
+          	<div class="form-group">
+				<%= p.input :billing_address %>
+			</div>
+          <legend> 訂購人地址</legend>
+          	<div class="form-group">
+				<%= p.input :shipping_name %>
+			</div>
+          <legend> 訂購人地址</legend>
+          	<div class="form-group">
+				<%= p.input :shipping_address %>
+			</div>	
+		<% end %>
+		
+		<%= f.submit "確認訂購", class: "btn white", data: { disable_with: "Submitting...."} %>
+		<div ><br><br></div>
+	<% end %>
+	</div>
+</section>

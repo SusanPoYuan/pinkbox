@@ -165,7 +165,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<span>心動不如馬上行動！</span>
-						<a class="btn white" href="#" data-toggle="modal" data-target="#product-modal"><b>立即體驗</b></a>
+						<%= link_to(content_tag(:b, "立即體驗"), choose_orders_path, method: :post, class: "btn white") %>
 					</div>	
 				</div>
 			</div>
