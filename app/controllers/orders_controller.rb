@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
 	def update
 		@order = Order.find(params[:id])
 		if @order.update(order_params)
+			Ordermailer.delay.notify_order_placed(@order)
 			redirect_to order_path(@order)
 		else
 			render :checkout
@@ -29,6 +30,6 @@ class OrdersController < ApplicationController
 
 	private
 	def order_params
-		params.require(:order).permit( info_attributes: [:billing_name, :billing_address, :shipping_name, :shipping_address])
+		params.require(:order).permit( info_attributes: [:email, :billing_name, :billing_address, :shipping_name, :shipping_address])
 	end
 end

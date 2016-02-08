@@ -1,18 +1,20 @@
-<section class="cta-1 bg-shop padding-top-bottom text-center">
-    <br><br><br><br><br><br>
-    <h1>謝謝您的訂購。</h1>
-    <br><br><br><br><br><br>
-</section>
+<link rel="stylesheet" type="text/css" href="/assets/application.css.scss" />
 <div class= "container-fluid text-center bg-shop-2">
 <div class="row">
   <div class="col-md-12">
-
-    <h2> 訂單明細 </h2>
+    <h2>
+      訂單明細 <br>
+      <small>
+        <%= link_to("訂單連結", order_url(@order.id)) %>
+      </small>
+    </h2>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="80%">商品明細</th>
+          <th width="70%">商品明細</th>
           <th>單價</th>
+          <th>數量</th>
+          <th>小記</th>
         </tr>
       </thead>
       <tbody>
@@ -25,17 +27,23 @@
             <td>
               <%= order_item.product_price %>
             </td>
+            <td>
+              <%= order_item.product_quantity %>
+            </td>
+            <td>
+              <%= order_item.product_quantity * order_item.product_price %>
+            </td>
           </tr>
         <% end %>
 
       </tbody>
     </table>
 
-    <div class="total clearfix">
-      <span class="pull-right">
+    <div class="total group clearfix">
+      <h4 class="pull-right">
         總計 <%= @order.total %> NTD
-      </span>
-    </div>
+      </h4>
+     </div>
 
      <hr>
 
@@ -44,14 +52,7 @@
      <table class="table table-striped table-bordered">
       <tbody>
         <tr>
-          <td>
-            訂購人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order_info.email %>
-          </td>
+          <td> 訂購人 </td>
         </tr>
         <tr>
           <td>
@@ -59,9 +60,7 @@
           </td>
         </tr>
         <tr>
-          <td>
-            收件人
-          </td>
+          <td> 收件者 </td>
         </tr>
         <tr>
           <td>

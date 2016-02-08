@@ -6,21 +6,25 @@
 	<%= simple_form_for @order do |f| %>
 
 		<%= f.simple_fields_for :info do |p|%>
-		  <legend> 訂購人</legend>
+			<legend> 訂購人</legend>
           	<div class="form-group">	
-          		<%= p.input :billing_name  %>
+          		<%= p.input :email  %>
           	</div>
+			<legend> 訂購人</legend>
+				<div class="form-group">	
+					<%= p.input :billing_name  %>
+				</div>
 
-          <legend> 訂購人地址</legend>
-          	<div class="form-group">
+			<legend> 訂購人地址</legend>
+				<div class="form-group">
 				<%= p.input :billing_address %>
 			</div>
-          <legend> 訂購人地址</legend>
-          	<div class="form-group">
+			<legend> 訂購人地址</legend>
+				<div class="form-group">
 				<%= p.input :shipping_name %>
 			</div>
-          <legend> 訂購人地址</legend>
-          	<div class="form-group">
+			<legend> 訂購人地址</legend>
+				<div class="form-group">
 				<%= p.input :shipping_address %>
 			</div>	
 		<% end %>
