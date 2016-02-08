@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-	
+
 	def choose
 		@products = Product.all
 	end
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 	end 
 
 	def show
-		@order = Order.find(params[:id])
+		@order = Order.find_by_token(params[:id])
 		@order_info = @order.info
 		@order_items = @order.items
 	end
@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
 		@order = Order.find(params[:id])
 		if @order.update(order_params)
 			Ordermailer.delay.notify_order_placed(@order)
-			redirect_to order_path(@order)
+			redirect_to order_path(@order.token)
 		else
 			render :checkout
 		end

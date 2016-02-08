@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208072133) do
+ActiveRecord::Schema.define(version: 20160208090438) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -66,7 +66,10 @@ ActiveRecord::Schema.define(version: 20160208072133) do
     t.integer  "total",      default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "token"
   end
+
+  add_index "orders", ["token"], name: "index_orders_on_token"
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
