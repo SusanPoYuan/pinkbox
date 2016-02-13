@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+	layout "order"
 
 	def choose
 		@products = Product.all
@@ -26,7 +27,7 @@ class OrdersController < ApplicationController
 
 			redirect_to order_path(@order.token)
 		else
-			render :checkout
+			render checkout_orders_path
 		end
 	end
 
