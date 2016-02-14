@@ -1,0 +1,32 @@
+<div class= "container-order">
+	<div class="row">
+		<div class = "col-md-8 col-md-offset-6 text-center bg-shop-2">
+		<h2>購買資訊</h2>
+		<%= simple_form_for @order do |f| %>
+			<%= f.simple_fields_for :info do |p|%>
+				<legend> 訂購人</legend>
+	          	<div class="form-group">	
+	          		<%= p.input :email, label:"你的email是：" %>
+	          	</div>
+				<legend> 訂購人</legend>
+					<div class="form-group">	
+						<%= p.input :billing_name, label:"訂購人："  %>
+					</div>
+				<legend> 訂購人地址</legend>
+					<div class="form-group">
+					<%= p.input :billing_address, label: "訂購人地址：" %>
+				</div>
+				<legend> 收件人</legend>
+					<div class="form-group">
+					<%= p.input :shipping_name , label: "收件人："%>
+				</div>
+				<legend> 訂購人地址</legend>
+					<div class="form-group">
+					<%= p.input :shipping_address, label: "收件人地址：" %>
+				</div>	
+			<% end %>
+			<%= f.submit "確認訂購", class: "btn white", data: { disable_with: "Submitting...."} %>
+		<% end %>
+		</div>
+	</div>
+

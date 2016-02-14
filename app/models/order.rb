@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
 	has_many :items, class_name: "OrderItem", dependent: :destroy
 	accepts_nested_attributes_for :info
 	
-	before_update :generate_token
+	before_create :generate_token
 
 	def generate_token
 		self.token = SecureRandom.uuid
