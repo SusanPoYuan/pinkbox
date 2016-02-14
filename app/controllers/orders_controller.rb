@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 	layout "order"
 
 	def choose
+		set_page_title "選擇方案"
 		@products = Product.all
 	end
 
@@ -11,9 +12,11 @@ class OrdersController < ApplicationController
 		@order.build_items(@product)
 		@order.calculate_total!
 		@info = @order.build_info
+		set_page_title @product.title
 	end 
 
 	def show
+		set_page_title "Thank you"
 		@order = Order.find_by_token(params[:id])
 		@order_info = @order.info
 		@order_items = @order.items

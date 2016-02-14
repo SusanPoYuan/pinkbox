@@ -6,6 +6,7 @@ gem "bootstrap-sass"
 gem "simple_form"
 gem "font-awesome-rails"
 gem 'waypoints-rails'
+gem "seo_helper"
 
 gem "carrierwave"
 gem "mini_magick"
