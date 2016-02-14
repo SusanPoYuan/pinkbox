@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :orders do
+    member do
+      post :pay2go_atm_complete
+    end
     collection do
       post :choose
       post :checkout
